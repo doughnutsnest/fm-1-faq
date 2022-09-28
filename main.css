@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background: linear-gradient(var(--soft-violet), var(--soft-blue));
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: white;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+    box-sizing: border-box;
+    box-shadow: 0 30px 50px hsla(255, 40%, 40%, 70%);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: var(--light-grayish-blue);
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.attribution a {
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--light-grayish-blue);
+}
+
+/* STATIC */
+.text {
+    text-align: left;
+    padding: 0 1.5rem;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: var(--very-dark-grayish-blue);
+    margin: 1rem 0;
+    padding: 0;
+}
+
+hr {
+    border: 1px solid var(--light-grayish-blue);
+    margin: 0;
+}
+
+p {
+    max-width: 90%;
+    color: var(--dark-grayish-blue);
+    line-height: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 1rem !important;
+}
+
+
+.img1 {
+    position: absolute;
+    top: 5rem !important;
+    margin-top: -12rem;
+}
+
+.img2 {
+    position: absolute;
+    top: .5rem !important;
+}
+
+.img3 {
+    position: relative;
+    left: -3rem !important;
+    top: 2rem;
+    margin-bottom: -25rem;
+    width: 400px;
+}
+
+.img4 {
+    position: relative;
+    left: -6rem !important;
+    top: 11rem;
+    z-index: 1;
+    width: 130px !important;
+}
+
+.img5 {
+    position: relative;
+    left: -3rem !important;
+    top: -4rem;
+    margin-bottom: -5rem;
+    width: 400px;
+}
+
+
+/* SCREEN SPECIFIC */
+/* Mobile: 375px */
+@media (max-width: 800px) {
+    main {
+        margin: 2rem 1rem;
+    }
+
+    .img-m {
+        display: block;
+        visibility: visible;
+        width: 240px;
+        position: relative;
+        top: 1rem;
+    }
+
+    .img-d {
+        display: none;
+        visibility: hidden;
+    }
+
+    .illustration {
+        align-self: center;
+    }
+
+    h1 {
+        text-align: center;
+    }
+}
+
+/* Desktop: 1440px */
+@media (min-width: 800px) {
+    main {
+        width: 800px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .text {
+        padding: 1rem 4rem 3rem 0;
+        margin: 1rem;
+    }
+
+    .img-d {
+        display: block;
+        visibility: visible;
+    }
+
+    .img-m {
+        display: none;
+        visibility: hidden;
+    }
+
+    .animation {
+        width: max-content;
+        animation-name: animation;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        margin-left: 30px;
+        margin-top: 5px;
+    }
+
+    @keyframes animation {
+        0% {
+            transform: translate(0px, 0px);
+        }
+
+        50% {
+            transform: translate(30px, -15px);
+        }
+
+        100% {
+            transform: translate(0px, 0px);
+        }
+    }
+}
+
+button {
+    border: none;
+    background-color: white;
+    color: var(--dark-grayish-blue);
+    font-weight: 700;
+    margin: 1rem 0;
+    padding: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.collapsible:hover {
+    cursor: pointer;
+    color: #F47B56;
+}
+
+.active {
+    color: var(--very-dark-grayish-blue);
+}
+
+.collapsible:after {
+    content: url(images/icon-arrow-down.svg);
+    float: right;
+}
+
+.active:after {
+    content: url(images/icon-arrow-down.svg);
+    float: right;
+    transform: rotate(0.5turn);
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
